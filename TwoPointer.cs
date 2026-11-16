@@ -16,7 +16,9 @@ public class TwoPointer
         //     Console.WriteLine("No solution found.");
         // }
 
-        Segregates0and1(new int[] {0, 1, 0, 1, 0, 0, 1, 1, 1, 0});
+        // Segregates0and1(new int[] {0, 1, 0, 1,1,0,0,0,1,1,0,0,0,1,1,0,0,0,1,1,1,1, 0, 0, 1, 1, 1, 0});
+
+        Console.WriteLine("unique values -" + RemoveDuplicates(new int[] {0,0,1,1,1,2,2,3,3,4}));
     }
     public static int[] TwoSum(int[] nums, int target)
     {
@@ -77,5 +79,34 @@ public class TwoPointer
             Console.WriteLine(nums[i]);   
         }
 
+    }
+
+    public static int RemoveDuplicates(int[] nums)
+    {
+        int left = 0;
+        int right = 1;
+        int unique = 1;
+        while (left <= right && right < nums.Length)
+        {
+            int rightValue = nums[right];
+            if(nums[right-1] == rightValue)
+            {
+                right++;
+            }
+            else
+            {
+                left++;
+                nums[left] = rightValue;
+                Console.WriteLine(rightValue);
+                right++;
+                unique++;
+            }
+        }
+        return unique;
+    }
+
+    public static int[] SortedSquares(int[] nums)
+    {
+        int left = nums[]
     }
 }
